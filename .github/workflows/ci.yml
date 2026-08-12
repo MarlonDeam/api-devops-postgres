@@ -7,12 +7,22 @@ on:
     branches: [ "main", "master" ]
 
 jobs:
-  build:
+  test-and-build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Baixar o código do repositório
         uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependências e rodar testes
+        run: |
+          pip install -r requirements.txt
+          pytest
 
       - name: Testar o build com Docker Compose
         run: |
