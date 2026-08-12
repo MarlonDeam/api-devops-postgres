@@ -1,6 +1,6 @@
 fastapi
 uvicorn[standard]
-psychopg2-binary
-psydantic
+psycopg2-binary
+pydantic
 pytest
 httpx
