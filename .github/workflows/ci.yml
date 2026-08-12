@@ -1,0 +1,19 @@
+name: CI - Build e Teste
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o código do repositório
+        uses: actions/checkout@v4
+
+      - name: Testar o build com Docker Compose
+        run: |
+          docker compose build
