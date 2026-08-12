@@ -50,6 +50,3 @@ docker compose up --build
 O repositório conta com um workflow do GitHub Actions (`.github/workflows/ci.yml`) disparado a cada push na branch `main` para validar a construção dos containers.
 EOF
 
-git add README.md
-git commit -m "fix: corrige formatacao do README"
-git push origin main
