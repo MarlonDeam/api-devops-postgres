@@ -40,7 +40,9 @@ def init_db():
     cursor.close()
     conn.close()
 
-init_db()
+@app.on_event("startup")
+def startup_db():
+    init_db()
 
 @app.get("/")
 def home():
